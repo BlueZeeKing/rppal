@@ -512,6 +512,18 @@ impl Uart {
         })
     }
 
+    pub fn to_device(self) -> File {
+        self.inner.device
+    }
+
+    pub fn get_device(&self) -> &File {
+        &self.inner.device
+    }
+
+    pub fn get_mut_device(&mut self) -> &mut File {
+        &mut self.inner.device
+    }
+
     /// Returns the line speed in baud (Bd).
     pub fn baud_rate(&self) -> u32 {
         self.inner.baud_rate
